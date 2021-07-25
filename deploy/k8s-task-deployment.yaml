@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: default
   name: k8s-task-deplyoment
   labels:
     app: k8s-task-app
