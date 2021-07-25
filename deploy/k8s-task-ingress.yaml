@@ -16,3 +16,9 @@ spec:
                 name: k8s-task-service
                 port:
                   number: 80
+          - path: /otusapp(/|$)(.*)
+            backend:
+              service:
+                name: k8-task-service
+                port:
+                  number: 80
