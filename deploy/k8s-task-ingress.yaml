@@ -8,12 +8,19 @@ metadata:
 spec:
   rules:
     - host: arch.homework
-    - http:
+      http:
         paths:
-          - path: /otusapp(/|$)(.*)
+          - path: /()(health)$
+            pathType: Exact
+            backend:
+              service:
+                name: k8s-task-service
+                port:
+                  name: app-port
+          - path: /otusapp($|/)(.*)
             pathType: Prefix
             backend:
               service:
                 name: k8s-task-service
                 port:
-                  number: 8000
+                  name: app-port

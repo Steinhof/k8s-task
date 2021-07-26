@@ -7,4 +7,6 @@ spec:
   selector:
     app: k8s-task-app
   ports:
-    - port: 8000
+    - name: app-port
+      port: 8000
+      targetPort: app-port
